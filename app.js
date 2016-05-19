@@ -26,6 +26,11 @@ router.route('/cheeky-nudes/:name')
 		res.json({"message":"oi " + req.params.name + " send me some cheeky nudes mate"});
 	});
 
+router.route('/other-guys/:reason/:context')
+	.get(function(req,res){
+		res.json("I'm not like those guys who " + req.params.context + ", I'm different from them because " + req.params.reason)
+	});
+
 router.get('/', function (req, res) {
   res.send('Hello Fuckboy!');
 });
