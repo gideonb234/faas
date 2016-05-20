@@ -24,7 +24,17 @@ router.route('/cheeky-nudes/:name')
 
 router.route('/tell-me-more/:awkward_name')
 	.get(function(req,res){
-		res.json({"message":"haha and then what do you want me to do " + req.params.awkward_name + " ;)"})
+		res.json({"message":"haha and then what do you want me to do " + req.params.awkward_name + " ;)"});
+	});
+
+router.route('/wasnotme/')
+	.get(function(req,res){		
+		res.json({"message":"That wasn't me it was my friend"});
+	});
+
+router.route('/wasnotme/:itwas')
+	.get(function(req,res){		
+		res.json({"message":"That wasn't me it was " + req.params.itwas});
 	});
 
 router.route('/other-guys/:reason/:context')
